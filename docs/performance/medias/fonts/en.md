@@ -11,13 +11,13 @@ description: Learn how to use fonts on your website without sacrificing performa
 >
 > 1. Use the default `Theme` section in the deco template.
 > 2. Prefer using one of the
-   > [default font families offered by Google](https://fonts.google.com/).
+>    [default font families offered by Google](https://fonts.google.com/).
 > 3. If you need a custom font, use a small-sized font and prefer the woff/woff2
-   > formats.
+>    formats.
 
 # Fonts in the deco theme
 
-![Theme configuration with fonts](https://github.com/site/assets/882438/c697a548-0beb-49d5-af67-0a1bb0f9f043)
+![Theme configuration with fonts](https://github.com/deco-sites/starting/assets/882438/c697a548-0beb-49d5-af67-0a1bb0f9f043)
 
 The `Theme` component in deco is already prepared to use optimized fonts
 [offered by Google](https://fonts.google.com/) through the `GoogleFont` font
@@ -25,7 +25,7 @@ loader.
 
 # Custom Fonts
 
-![Using custom fonts](https://github.com/site/assets/882438/2a267a57-34eb-479f-91dc-e8e3f10cfca8)
+![Using custom fonts](https://github.com/deco-sites/starting/assets/882438/2a267a57-34eb-479f-91dc-e8e3f10cfca8)
 
 To use custom fonts, it is recommended to use a font preferably in the
 woff/woff2 format and with a small file size (less than 25kb).

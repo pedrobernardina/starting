@@ -3,14 +3,14 @@ description: Learn how to integrate deco with VTEX ecommerce platform.
 ---
 
 This article guides you on creating and configuring a website at
-[**deco.cx**](http://deco.cx) for a _storefront_ using data from
+[**deco.cx**](https://deco.cx) for a _storefront_ using data from
 [VTEX](https://vtex.com/ "https://vtex.com/") ecommerce platform.
 
 > TL;DR: To connect to VTEX you need to change `vtex` app configuration at
-> https://deco.cx/admin/sites/{site}/library?type=apps
+> `https://deco.cx/admin/sites/{site}/library?type=apps`
 
-> **Video**: To watch the content of this article, click
-> [here](https://www.loom.com/share/ff6dc0fdaa064ac5948133ed5b0b8463)
+> **Video**:
+> [Watch the content of this article here](https://www.loom.com/share/ff6dc0fdaa064ac5948133ed5b0b8463)
 
 # Summary
 
@@ -23,8 +23,7 @@ This article guides you on creating and configuring a website at
 
 # Prerequisites
 
-- A deco webiste. Create one for free at
-  [https://deco.cx/admin](https://deco.cx/admin "https://deco.cx/admin").
+- A deco webiste. Create one for free at [Deco Admin](https://admin.deco.cx/).
 - A VTEX account
   [(help)](https://help.vtex.com/tutorial/what-is-an-account-name--i0mIGLcg3QyEy8OCicEoC).
 
@@ -69,11 +68,11 @@ unwanted indexing.
 To connect to your VTEX account:
 
 1. Access your site's administrative panel at
-   [https://deco.cx/admin](https://deco.cx/admin "https://deco.cx/admin").
+   [Deco Admin](https://admin.deco.cx/).
 2. On the topbar, select _blocks_
 3. Choose the _Apps_ tab
 4. Select the **vtex** app. You should see something like:
-   <img width="580" alt="image" src="https://github.com/site/assets/76620866/3a9fe86d-089a-41a6-84b5-d371a90a3a11">
+   <img width="580" alt="image" src="https://github.com/deco-sites/starting/assets/76620866/3a9fe86d-089a-41a6-84b5-d371a90a3a11">
 
 5. Change the account configuration from `bravtexfashionstore` to your VTEX
    [account name](https://help.vtex.com/tutorial/what-is-an-account-name--i0mIGLcg3QyEy8OCicEoC)
@@ -89,27 +88,27 @@ block.
 After the VTEX setup is complete, try adding a shelf to your webiste.
 
 1. Access your site's administrative panel at
-   [https://deco.cx/admin](https://deco.cx/admin "https://deco.cx/admin").
+   [Deco Admin](https://admin.deco.cx/).
 2. On the topbar, select _blocks_
 3. Select the block `/Products/ProductShelf.tsx` and click on the `+` button
-   <img width="480" alt="image" src="https://github.com/site/assets/1753396/a2bfe995-daf1-4ef7-8957-2bc55712ec87">
+   <img width="480" alt="image" src="https://github.com/deco-sites/starting/assets/1753396/a2bfe995-daf1-4ef7-8957-2bc55712ec87">
 
 4. On the `products` field, select any VTEX integration (legacy or Intelligent
    Search).
-   <img width="434" alt="image" src="https://github.com/site/assets/1753396/9e084af6-db18-472e-92ac-7255bc4d9705">
+   <img width="434" alt="image" src="https://github.com/deco-sites/starting/assets/1753396/9e084af6-db18-472e-92ac-7255bc4d9705">
 
 5. Fill the `Collection ID` with a valid collection, e.g. 139
 6. Fill the `count` attribute with the number of products to display, let's
    say 6.
-   <img width="349" alt="image" src="https://github.com/site/assets/1753396/df0794a8-fbcc-4c74-915e-ba13e179e9a7">
+   <img width="349" alt="image" src="https://github.com/deco-sites/starting/assets/1753396/df0794a8-fbcc-4c74-915e-ba13e179e9a7">
 
 7. Now, on the top right corner, click on `Create` and name it, e.g.
    `Collection 139`
-   <img width="577" alt="image" src="https://github.com/site/assets/1753396/97720584-3206-4457-8972-a719323962c4">
+   <img width="577" alt="image" src="https://github.com/deco-sites/starting/assets/1753396/97720584-3206-4457-8972-a719323962c4">
 
 8. On the top right corner click on `Publish`.
 9. You can now drag&drop the block `Collection 139` in any page.
-   <img width="1504" alt="image" src="https://github.com/site/assets/1753396/bfc74614-b44b-45a9-b1e6-2465e0149ac4">
+   <img width="1504" alt="image" src="https://github.com/deco-sites/starting/assets/1753396/bfc74614-b44b-45a9-b1e6-2465e0149ac4">
 
 # Troubleshooting
 
@@ -126,7 +125,7 @@ Common issues when connecting to VTEX arises from:
    1. With _Dev Tools_ open, go to **Application** or **Storage**.
    1. On the left side, select the **Cookies** item and select the store's URL.
    1. Look for Cookie `vtex_segment` and **copy its value,**.
-   1. Go to the https://jwt.io website and paste the value.
+   1. Go to the [JWT website](https://jwt.io) and paste the value.
    1. Check the returned JSON. The `channel` field brings the `salesChannel`
       value and the `cultureInfo` field brings the `defaultLocale`.
 
@@ -134,7 +133,7 @@ Common issues when connecting to VTEX arises from:
 
    <img width="1281" alt="image" src="https://user-images.githubusercontent.com/18706156/226075931-6ffe568e-a6c9-4850-ad88-2a02f7a9f5f0.png">
 3. Wrong accountName setup. To figure out the right accountName:
-   1. Access your current store URL, e.g.: https://www.mystore.com.br.
+   1. Access your current store URL, e.g.: `https://www.mystore.com.br`.
    1. Right-click and select **Inspect**.
    1. With _Dev Tools_ open, type _Ctrl + F_ to open the search within the HTML.
    1. Search for `vtexassets` or `vteximg` (depending on the store's current

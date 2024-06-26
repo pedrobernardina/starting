@@ -1,22 +1,20 @@
-import useMenuState from "site/components/decohelp/pages/hooks/useMenuState.ts";
 import { useEffect, useState } from "preact/hooks";
 
 interface OnThisPage {
   label?: string;
 }
 
-export default function OnThisPage(props: OnThisPage) {
-  const { label } = props;
-  const { isMobile } = useMenuState();
+export default function OnThisPage(props: OnThisPage & { url: string }) {
+  const { label = "On this page" } = props;
   const baseClass = "text-[15px] font-normal leading-tight";
   const activeClass = label && label.length > 0
-    ? "text-[#2E6ED9]"
+    ? "text-decorative-one-900"
     : "text-neutral-900";
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  let headings: { element: Element | null; index: number }[] = [];
+  let headings: Element[] = [];
 
   function handleScroll() {
-    headings.forEach(({ element, index }) => {
+    headings.forEach((element, index) => {
       if (element) {
         const rect = element.getBoundingClientRect();
 
@@ -37,13 +35,15 @@ export default function OnThisPage(props: OnThisPage) {
 
   useEffect(() => {
     function createLinksInArticles() {
-      const articles = document.querySelectorAll("article");
-      headings = Array.from(articles).map((article, index) => ({
-        element: article.querySelector("h1, h2, h3, h4, h5, h6"),
-        index,
-      }));
+      const markdownBody = document.querySelector(".markdown-body");
+      if (!markdownBody) {
+        throw new Error("Markdown body not present");
+      }
+      headings = Array.from(
+        markdownBody.querySelectorAll("h1, h2, h3, h4, h5, h6"),
+      );
 
-      headings.forEach(({ element, index }) => {
+      headings.forEach((element, index) => {
         if (element) {
           const contentLabel = element.textContent;
           if (contentLabel) {
@@ -83,7 +83,7 @@ export default function OnThisPage(props: OnThisPage) {
             listItem.id = `item-${index}`;
             listItem.className = `${baseClass} menu-item ${
               activeIndex === index ? activeClass : ""
-            } ml-[17px]`;
+            }`;
             listItem.appendChild(link);
 
             const contentList = document.getElementById("content-list");
@@ -104,19 +104,54 @@ export default function OnThisPage(props: OnThisPage) {
     };
   }, [label, activeClass]);
 
+  const isInEN = props.url.includes("/en/");
+
   return (
     <div
-      class={`max-w-[344px] w-full xl:block hidden lg:top-[140px] lg:mb-[140px] ${
-        isMobile ? "absolute" : "sticky"
-      }`}
+      class={`lg:w-[300px] w-full xl:block hidden lg:top-[140px] lg:mb-[140px] lg:sticky`}
     >
-      <ul id="content-list" class={`list-disc flex flex-col gap-2`}>
+      <ul id="content-list" class={`flex flex-col gap-2 text-white`}>
         {label && (
-          <h3 class="text-black text-[15px] font-semibold leading-tight mb-2">
+          <h3 class="text-white text-[24px] font-semibold leading-tight mb-2">
             {label}
           </h3>
         )}
       </ul>
+      <div class="flex backdrop-blur-xl h-[50px] rounded-full bg-white/5 w-[150px] mt-6">
+        <button
+          class={`w-1/2 font-semibold rounded-full ${
+            isInEN ? "bg-[#02F67C]" : "text-white"
+          }`}
+          onClick={() => {
+            globalThis.location.href = globalThis.location.href.replace(
+              "/pt/",
+              "/en/",
+            );
+          }}
+        >
+          EN
+        </button>
+        <button
+          class={`w-1/2 font-semibold rounded-full ${
+            isInEN ? "text-white" : "bg-[#02F67C]"
+          }`}
+          onClick={() => {
+            globalThis.location.href = globalThis.location.href.replace(
+              "/en/",
+              "/pt/",
+            );
+          }}
+        >
+          PT
+        </button>
+      </div>
     </div>
   );
 }
+
+export const loader = (props: OnThisPage, req: Request) => {
+  return {
+    ...props,
+    url: req.url,
+  };
+};

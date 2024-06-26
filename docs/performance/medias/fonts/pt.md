@@ -11,13 +11,13 @@ description: Aprenda como usar imagens em seu site sem perder desempenho.
 >
 > 1. Utilize a section de `Theme` padrão no template da deco.
 > 2. De preferência ao uso de uma das
-   > [famílias de fontes padrões oferecidas pela google](https://fonts.google.com/)
+>    [famílias de fontes padrões oferecidas pela google](https://fonts.google.com/)
 > 3. Caso precise de uma fonte própria, use uma fonte de tamanho pequeno, dando
-   > preferência aos formatos woff/woff2.
+>    preferência aos formatos woff/woff2.
 
 # Fontes no tema da deco
 
-![Configuração do tema com fontes](https://github.com/site/assets/882438/c697a548-0beb-49d5-af67-0a1bb0f9f043)
+![Configuração do tema com fontes](https://github.com/deco-sites/starting/assets/882438/c697a548-0beb-49d5-af67-0a1bb0f9f043)
 
 O componente de `Theme` da deco já está preparado para o uso de fontes
 otimizadas [oferecidas pela google](https://fonts.google.com/) através do loader
@@ -25,7 +25,7 @@ de fontes `GoogleFont`.
 
 # Fontes personalizadas
 
-![Uso de temas próprios](https://github.com/site/assets/882438/2a267a57-34eb-479f-91dc-e8e3f10cfca8)
+![Uso de temas próprios](https://github.com/deco-sites/starting/assets/882438/2a267a57-34eb-479f-91dc-e8e3f10cfca8)
 
 Para fazer o uso de fontes personalizadas, a recomendação é fazer o uso de uma
 fonte preferencialmente no formato woff/woff2 e de pouco tamanho (menor do que

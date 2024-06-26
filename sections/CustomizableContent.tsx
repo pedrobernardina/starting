@@ -42,7 +42,7 @@ export default function CustomizableMarkdownContent(
   return (
     <>
       <Head>
-        <link rel="stylesheet" href={`/gfm.css`} />
+        <link rel="stylesheet" href={`/docs.css`} />
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -88,7 +88,9 @@ export default function CustomizableMarkdownContent(
         </style>
       </Head>
       {matchCustom?.content
-        ? matchCustom.content.map((c) => <c.Component {...c.props} />)
+        ? matchCustom.content.map((c) => (
+          <c.Component {...c.props} mdContent={props.data} />
+        ))
         : <MarkdownContent data={{ ...props.data }} />}
     </>
   );

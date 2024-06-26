@@ -29,6 +29,14 @@
   details[open] summary svg {
     transform: rotate(90deg);
   }
+
+  details.home-faq summary svg {
+    transition: all .1s linear;
+  }
+
+  details[open].home-faq summary svg {
+    transform: rotate(45deg);
+  }
   
   details[open].syllabus summary svg {
     transform: rotate(180deg);
@@ -120,10 +128,18 @@
     /* Safari */
   }
 
+  .markdown-body li::marker {
+    color: white;
+  }
+
   /* Disable scroll once drawer/modal is openned */
   body:has(.modal-toggle:checked) {
     overflow: hidden;
     height: 100vh;
+  }
+
+  .markdown-body iframe{
+    width: 100%;
   }
 }
 
@@ -136,6 +152,10 @@
   .feature-card {
     @apply w-[380px] max-w-[380px] lg:h-[350px] bg-[#000D0D] rounded-3xl;
     @apply flex flex-col items-center justify-start gap-12;
+  }
+
+  .pricing-card {
+    @apply bg-[#000D0D] rounded-3xl;
   }
 
   .feature-card-lp-contest{
@@ -260,6 +280,21 @@
   .feature-progress {
     stroke: #02F67C;
     stroke-dasharray: 0, 1;
+  }
+
+  .deco-background {
+    height: 100vh;
+    width: 100vw;
+    min-height: 100%;
+    display: block;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    pointer-events: none;
+    z-index: 5;
+    background-color: #030806;
   }
 
   .deco-grid {

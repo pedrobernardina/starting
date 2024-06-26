@@ -13,9 +13,9 @@ since: 1.0.0
 > Por isso, é importante tomar alguns cuidados no uso de ilhas:
 >
 > 1. Reduza ao máximo a quantidade de props a ser enviada / utilizada para uma
-   > ilha
+>    ilha
 > 2. Torne uma ilha apenas o que for necessário, lembrando de usar o `children`
-   > para elementos internos que não precisam de hidratação.
+>    para elementos internos que não precisam de hidratação.
 
 # Reduzindo o tamanho do JSON de props enviado para as ilhas
 
@@ -28,7 +28,7 @@ no tempo inicial de carregamento como também na
 `useSignal`, etc...). É possível visualizar no tamanho do JSON final através da
 aba **Performance** no CMS deco.
 
-![288067513-db3a14e1-c0ac-47f8-83b9-afc8db60de71](https://github.com/site/assets/76822093/ec005f5d-4169-4e89-acd0-8c06baf3c80d)
+![288067513-db3a14e1-c0ac-47f8-83b9-afc8db60de71](https://github.com/deco-sites/starting/assets/76822093/ec005f5d-4169-4e89-acd0-8c06baf3c80d)
 
 Quando o tamanho do JSON passa de ~500kb, é provável que a UI não precise do
 dado completo, mas sim alguma parte dele (ou então uma computação sobre outros

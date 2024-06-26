@@ -1,4 +1,4 @@
-import { Head } from "$fresh/runtime.ts";
+import { asset, Head } from "$fresh/runtime.ts";
 import { LoaderReturnType } from "deco/types.ts";
 import { MDFileContent } from "site/components/ui/Types.tsx";
 
@@ -34,7 +34,7 @@ export default function DocsPage(
             ? `${props.data.title} | deco.cx docs`
             : "deco.cx docs"}
         </title>
-        <link rel="stylesheet" href={`/gfm.css`} />
+        <link rel="stylesheet" href={`/docs.css`} />
         {description && <meta name="description" content={description} />}
         <style
           dangerouslySetInnerHTML={{
@@ -98,7 +98,10 @@ export default function DocsPage(
 
 function Content(props: MDContent) {
   const { body, attrs } = props.content;
-  const _html = gfm.render(body, { allowIframes: true });
+  const _html = gfm.render(body, {
+    allowIframes: true,
+    allowedAttributes: { "div": ["style"] },
+  });
   const html = _html.replaceAll(
     /( href="https:\/\/(?!www.deco)).*?/g,
     ' target="_blank"$1',
@@ -112,10 +115,13 @@ function Content(props: MDContent) {
         </span>
       )}
       <div
-        data-color-mode="dark" data-light-theme="light" data-dark-theme="dark"
-        class="mt-8 markdown-body !text-[#F9FAFB] !bg-black"
+        data-color-mode="dark"
+        data-light-theme="light"
+        data-dark-theme="dark"
+        class="mt-8 markdown-body !text-[#F9FAFB] !bg-base-700"
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      <script src={asset("/docs/js/copy-snippets.js")}></script>
     </main>
   );
 }

@@ -24,7 +24,7 @@ Um componente Preact, é uma função exportada por padrão (`export default`) q
 recebe propriedades, retorna um JSX e é invocada a cada renderização do elemento
 que é definido. Como exemplo, abra, no VSCode, a section `sections/Hero.tsx` do
 template de ecommerce. Este arquivo também está acessível
-[no github da deco](https://github.com/deco-sites/start/blob/main/sections/Hero.tsx).
+[no github da deco](https://github.com/deco-sites/storefront/blob/main/sections/Content/Hero.tsx).
 
 O código deste elemento é escrito em HTML com JS, como no exemplo abaixo.
 
@@ -121,7 +121,7 @@ produção para pegar os dados das propriedades das Sections daquele projeto. Po
 sua vez, o código em um Site é oriundo do GitHub, o mesmo que o desenvolvedor
 utiliza.
 
-![Estrutura de acesso aos dados do Site](https://github.com/site/assets/882438/dcc4d63a-bbb2-4f81-909a-054eef048a53)
+![Estrutura de acesso aos dados do Site](https://github.com/deco-sites/starting/assets/882438/dcc4d63a-bbb2-4f81-909a-054eef048a53)
 
 # Primeira alteração e seleção de ambiente
 
@@ -211,7 +211,7 @@ De forma sucinta, para testar alterações na Section `Hero.tsx`:
 
 2. Realize alterações localmente no arquivo `sections/Hero.tsx`.
 
-3. Acesse o Admin de _deco.cx_ em https://deco.cx/admin, selecione seu Site e vá
+3. Acesse o [Admin da _deco.cx_](https://deco.cx/admin), selecione seu Site e vá
    em `Sections`.
 
 4. Certifique-se de que `localhost:8000` esteja selecionado no Seletor de

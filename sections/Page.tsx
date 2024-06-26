@@ -8,17 +8,17 @@ export interface SectionProps {
 
 export default function (props: SectionProps) {
   return (
-    <section class="bg-black">
+    <section class="bg-base-700">
       <div
-        class={`flex lg:flex-row flex-col w-full mx-auto max-w-[1440px] lg:pt-[140px] justify-between`}
+        class={`flex lg:flex-row lg:px-10 gap-10 flex-col w-full mx-auto max-w-screen-2xl lg:pt-[140px]`}
       >
-        {<props.SectionSidebar.Component {...props.SectionSidebar.props} />}
-        {<props.SectionContent.Component {...props.SectionContent.props} />}
-        {
-          <props.SectionOnThisPage.Component
-            {...props.SectionOnThisPage.props}
-          />
-        }
+        <props.SectionSidebar.Component {...props.SectionSidebar.props} />
+        <div class="lg:max-w-[736px]">
+          <props.SectionContent.Component {...props.SectionContent.props} />
+        </div>
+        <props.SectionOnThisPage.Component
+          {...props.SectionOnThisPage.props}
+        />
       </div>
     </section>
   );
